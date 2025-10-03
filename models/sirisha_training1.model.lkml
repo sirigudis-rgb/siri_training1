@@ -53,6 +53,8 @@ explore: customer {}
 
 explore: day_of_week {}
 
+explore: Total_Orders {}
+
 explore: demo_visits_data {
   join: users {
     type: left_outer
