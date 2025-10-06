@@ -54,19 +54,31 @@ view: users {
     drill_fields: [detail*]
   }
 
+  measure: users_count {
+    type: count
+    html:
+          <ul>
+            <li>Explore: {{ _explore._name }}</li>
+            <li>Model: {{ _model._name }}</li>
+            <li>Users Country: {{ users.country._in_query }}</li>
+            <li>Query Timezone: {{ _query._query_timezone }}</li>
+          </ul>
+          ;;
+  }
+
   # ----- Sets of fields for drilling ------
   set: detail {
     fields: [
-	id,
-	first_name,
-	last_name,
-	demo_visits_data.count,
-	events.count,
-	orders.count,
-	saralooker.count,
-	sindhu.count,
-	user_data.count
-	]
+  id,
+  first_name,
+  last_name,
+  demo_visits_data.count,
+  events.count,
+  orders.count,
+  saralooker.count,
+  sindhu.count,
+  user_data.count
+  ]
   }
 
 }
